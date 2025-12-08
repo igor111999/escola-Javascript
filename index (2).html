@@ -1,0 +1,67 @@
+ <!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .card{
+        background_color:blue;
+        align-itens: center;
+      }
+      label{
+        color:black;
+      } 
+      .descricao{
+        color:yellow;
+      }
+      #info{
+        color:yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="card">
+      <label> Digite um caminho</label>
+      <p><input type="text" id="b">
+      <p><label>Nome</label>
+      <p><input type="text" id="nome" >
+      <p><label>Valor</label>
+      <p><input type="text" id="valor" >
+      <p><label>Descrição</label>
+      <p><input type="text" id="descricao" >            
+      <p><button id="body" onclick="adicionar()">adicionar</button>
+      <button id="bod" onclick="remover()">remover</button><p>
+
+    </div>  
+    <script>
+        function adicionar(){
+          const novaImagem = document.createElement('img');
+          novaImagem.id = 'img';
+          novaImagem.src = document.getElementById("b").value; 
+          document.body.appendChild(novaImagem);
+          const descri = document.getElementById("descricao").value;
+          const no = document.createElement("h1");
+          no.innerText = descri;
+          no.id = 'no';
+          document.body.appendChild(no);
+          const valor = document.getElementById("valor").value;
+          const va = document.createElement("h1");
+          va.innerText = valor;
+          va.id = 'va';
+          document.body.appendChild(va);
+          no.style.backgroundColor = "";
+          document.body.style.backgroundColor = "";
+          document.getElementById("card").style.border = "";
+          document.getElementById("card").style.backgroundColor = "";
+      }
+    </script>
+    <script>
+        function remover(){
+          const element = document.getElementById("img");
+          const elemen = document.getElementById("no");          
+          element.remove();
+          elemen.remove();
+          }
+    </script>  
+  </body>
+</html>
